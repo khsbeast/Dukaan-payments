@@ -1,4 +1,5 @@
 import Payments from "./Views/Payments";
+import "./App.scss";
 
 function App() {
   return (

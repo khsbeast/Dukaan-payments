@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.sideBar {
+  flex-basis: 15%;
+  background-color: #1e2640;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+}

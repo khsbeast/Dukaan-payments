@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import styles from "./sideBar.module.scss";
+import UserBox from "./UserBox/UserBox";
 
-function sideBar() {
+function SideBar() {
   return (
-    <div>sideBar</div>
-  )
+    <div className={styles.sideBar}>
+      <UserBox />
+    </div>
+  );
 }
 
-export default sideBar
+export default SideBar;
