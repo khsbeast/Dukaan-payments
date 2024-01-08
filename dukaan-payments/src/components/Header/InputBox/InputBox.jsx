@@ -1,9 +1,11 @@
 import React from "react";
+import styles from "./inputBox.module.scss";
+import searchIcon from "../../../Assets/search.svg";
 
 const InputBox = () => {
-  return <div className={}>
-    <img src="https://cdn.dukaan.io/assets/icons/search.svg" alt="search" />
-    <input type="text" placeholder="Search" />
+  return <div className={styles.inputBox}>
+    <img src={searchIcon} alt="search" />
+    <input type="text" placeholder="Search features, tutorials, etc." />
   </div>;
 };
 
