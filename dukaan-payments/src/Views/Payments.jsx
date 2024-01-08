@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "../Components/Sidebar/SideBar.jsx";
 import styles from "./payments.module.scss";
+import Header from "../Components/Header/Header.jsx";
 
 function Payments() {
   return (
@@ -8,7 +9,9 @@ function Payments() {
       <div className={styles.sideBar}>
         <SideBar />
       </div>
-      <div className={styles.main}>Payments</div>
+      <div className={styles.main}>
+        <Header />
+      </div>
     </div>
   );
 }
