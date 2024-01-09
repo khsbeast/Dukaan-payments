@@ -14,16 +14,16 @@
   flex: 1;
   .bodyContainer {
     margin: 2rem;
+    .overviewSection {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
     h3 {
       color: var(--Black-12, #1a181e);
       font-size: 20px;
       font-weight: 500;
       line-height: 28px;
     }
-  }
-  .bodyContainer > div {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 24px;
   }
 }

@@ -3,6 +3,111 @@ import SideBar from "../Components/Sidebar/SideBar.jsx";
 import styles from "./payments.module.scss";
 import Header from "../Components/Header/Header.jsx";
 import Card from "../Components/Card/Card.jsx";
+import PaginationTable from "../Components/Table/Table.jsx";
+
+const data = [
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value2", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value2", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value2", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value2", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  { field1: "Value1", field2: "Value2", field3: "Value3", field4: "Value4" },
+  // Add more data as needed
+];
 
 function Payments() {
   return (
@@ -13,7 +118,7 @@ function Payments() {
       <div className={styles.main}>
         <Header />
         <div className={styles.bodyContainer}>
-          <div>
+          <div className={styles.overviewSection}>
             <h3>Overview</h3>
             <div>dropdown</div>
           </div>
@@ -22,10 +127,13 @@ function Payments() {
             <Card heading="Amount received" number="₹23,92,312.19" />
           </div>
           <h3 style={{ marginBottom: "20px" }}>Transactions | This Month</h3>
+          <div>
+            <PaginationTable data={data} itemsPerPage={5} />
+          </div>
         </div>
       </div>
     </div>
-  );                 
+  );
 }
 
 export default Payments;

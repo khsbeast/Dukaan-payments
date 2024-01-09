@@ -1,7 +1,11 @@
-button{
+.chatWrapper {
+  display: flex;
+  gap: 12px;
+  button {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #E6E6E6;
+    background: #e6e6e6;
     cursor: pointer;
+  }
 }
