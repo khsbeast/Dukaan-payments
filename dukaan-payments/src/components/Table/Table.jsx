@@ -10,10 +10,22 @@ import infoIcon from "../../Assets/Info.svg";
 
 const PaginationTable = ({ data, itemsPerPage }) => {
   const [activePage, setActivePage] = useState(1);
+  const [query, setQuery] = useState("");
+
+  const fuzzySearch = (query, payment) => {
+    const queryLowerCase = query?.toLowerCase();
+    const targetLowerCase = payment?.toLowerCase();
+
+    return targetLowerCase.includes(queryLowerCase);
+  };
+
 
   const lastItem = activePage * itemsPerPage;
   const firstItem = lastItem - itemsPerPage;
   const paymentsData = data.slice(firstItem, lastItem);
+
+  const filteredData = paymentsData.filter(payment => fuzzySearch(query, payment.orderId));
+
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
@@ -38,6 +50,7 @@ const PaginationTable = ({ data, itemsPerPage }) => {
             type="text"
             placeholder="Search by order ID..."
             className={styles.search}
+            onChange={(e) => setQuery(e.target.value)}
           />
         </div>
         <div style={{ display: "flex", gap: "12px" }}>
@@ -60,9 +73,10 @@ const PaginationTable = ({ data, itemsPerPage }) => {
         </div>
         <div className={styles.headerItem} style={{ justifyContent: "end" }}>
           Transaction fees
+          <img src={infoIcon} alt="info" />
         </div>
       </div>
-      {paymentsData.map((item) => (
+      {filteredData.map((item) => (
         <TableItem
           id={item.orderId}
           date={item.orderDate}
