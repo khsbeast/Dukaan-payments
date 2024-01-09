@@ -5,6 +5,7 @@ import Header from "../Components/Header/Header.jsx";
 import Card from "../Components/Card/Card.jsx";
 import PaymentsTable from "../Components/Table/PaymentsTable.jsx";
 import { getPayments } from "./generateData.js";
+import arrowRight from "../Assets/arrow-right.svg";
 
 const data = getPayments();
 console.log(data);
@@ -20,7 +21,10 @@ function Payments() {
         <div className={styles.bodyContainer}>
           <div className={styles.overviewSection}>
             <h3>Overview</h3>
-            <div>dropdown</div>
+            <div className={styles.dropdown}>
+              <p> Last Month </p>
+              <img src={arrowRight} alt="arrow" />{" "}
+            </div>
           </div>
           <div style={{ display: "flex", gap: "20px", marginBottom: "32px" }}>
             <Card heading="Online orders" number="231" />
