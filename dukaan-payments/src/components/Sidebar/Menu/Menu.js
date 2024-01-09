@@ -31,6 +31,7 @@ export const menuItems = [
     {
         title :"Payments",
         icon : paymentsIcon,
+        active: true,
     },
     {
         title :"Marketing",

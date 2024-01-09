@@ -3,7 +3,7 @@ import SideBar from "../Components/Sidebar/SideBar.jsx";
 import styles from "./payments.module.scss";
 import Header from "../Components/Header/Header.jsx";
 import Card from "../Components/Card/Card.jsx";
-import PaginationTable from "../Components/Table/Table.jsx";
+import PaymentsTable from "../Components/Table/PaymentsTable.jsx";
 import { getPayments } from "./generateData.js";
 
 const data = getPayments();
@@ -28,7 +28,7 @@ function Payments() {
           </div>
           <h3 style={{ marginBottom: "20px" }}>Transactions | This Month</h3>
           <div>
-            <PaginationTable data={data} itemsPerPage={19} />
+            <PaymentsTable data={data} itemsPerPage={19} />
           </div>
         </div>
       </div>

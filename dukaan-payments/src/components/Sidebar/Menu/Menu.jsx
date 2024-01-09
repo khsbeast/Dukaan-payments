@@ -5,10 +5,18 @@ import MenuItem from "./MenuItem";
 
 const Menu = () => {
   return (
-    <div className={styles.menu}>
-      {menuItems.map((item) => {
-        return <MenuItem icon={item.icon} title={item.title} />;
-      })}
+    <div>
+      <div className={styles.menu}>
+        {menuItems.map((item) => {
+          return (
+            <MenuItem
+              icon={item.icon}
+              title={item.title}
+              active={item.active}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

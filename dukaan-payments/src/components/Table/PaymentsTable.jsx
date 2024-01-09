@@ -8,10 +8,11 @@ import sortIcon from "../../Assets/Sort.svg";
 import downloadIcon from "../../Assets/download.svg";
 import infoIcon from "../../Assets/Info.svg";
 
-const PaginationTable = ({ data, itemsPerPage }) => {
+const PaymentsTable = ({ data, itemsPerPage }) => {
   const [activePage, setActivePage] = useState(1);
   const [query, setQuery] = useState("");
 
+  // fuzzy search on order id column
   const fuzzySearch = (query, payment) => {
     const queryLowerCase = query?.toLowerCase();
     const targetLowerCase = payment?.toLowerCase();
@@ -19,13 +20,13 @@ const PaginationTable = ({ data, itemsPerPage }) => {
     return targetLowerCase.includes(queryLowerCase);
   };
 
-
   const lastItem = activePage * itemsPerPage;
   const firstItem = lastItem - itemsPerPage;
   const paymentsData = data.slice(firstItem, lastItem);
 
-  const filteredData = paymentsData.filter(payment => fuzzySearch(query, payment.orderId));
-
+  const filteredData = paymentsData.filter((payment) =>
+    fuzzySearch(query, payment.orderId)
+  );
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
@@ -103,4 +104,4 @@ const PaginationTable = ({ data, itemsPerPage }) => {
   );
 };
 
-export default PaginationTable;
+export default PaymentsTable;

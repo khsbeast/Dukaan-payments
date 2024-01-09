@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
 
+// This generates fake payment data so I can mock the API to implement pagination
 export const getPayments = () => {
     const fakeArray = [];
     

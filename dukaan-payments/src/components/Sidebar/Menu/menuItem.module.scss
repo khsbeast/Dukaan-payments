@@ -17,3 +17,10 @@
     line-height: 20px;
   }
 }
+
+.menuContainer:hover,
+.active {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
