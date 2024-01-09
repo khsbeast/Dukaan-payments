@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./PaginationTable.scss";
+import styles from "./paginationTable.module.scss";
 import PaginationButtons from "./PaginationButtons/Buttons";
 import NavButtons from "./PaginationButtons/NavButtons/NavButtons";
+import TableItem from "./PaginationButtons/TableItem/TableItem";
 
 const PaginationTable = ({ data, itemsPerPage }) => {
   const [activePage, setActivePage] = useState(1);
@@ -25,36 +26,21 @@ const PaginationTable = ({ data, itemsPerPage }) => {
   };
 
   return (
-    <div className="tableCard">
-      <div className="pagination-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Field 1</th>
-              <th>Field 2</th>
-              <th>Field 3</th>
-              <th>Field 4</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paymentsData.map((item, index) => (
-              <tr key={index}>
-                <td>{item.field1}</td>
-                <td>{item.field2}</td>
-                <td>{item.field3}</td>
-                <td>{item.field4}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className={styles.tableCard}>
+      <div className={styles.header}>
+        <div className={styles.headerItem}>Order ID</div>
+        <div className={styles.headerItem}>Order date</div>
+        <div className={styles.headerItem} style={{justifyContent:"end"}}>Order Amount</div>
+        <div className={styles.headerItem} style={{justifyContent:"end"}}>Transaction fees</div>
       </div>
-      <div className="pagination">
+      <TableItem id="#281209" date="7 July, 2023" amount="₹1,278.23" fees="₹22" />
+      <div className={styles.pagination}>
         <NavButtons
           action={handlePrevClick}
           disabled={activePage === 1}
           title="Previous"
         />
-        <div className="paginationButton">
+        <div className={styles.paginationButton}>
           {PaginationButtons({ activePage, totalPages, setActivePage })}
         </div>
         <NavButtons
