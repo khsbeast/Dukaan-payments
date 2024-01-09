@@ -4,6 +4,10 @@ import styles from "./payments.module.scss";
 import Header from "../Components/Header/Header.jsx";
 import Card from "../Components/Card/Card.jsx";
 import PaginationTable from "../Components/Table/Table.jsx";
+import { getPayments } from "./generateData.js";
+
+const data = getPayments();
+console.log(data);
 
 function Payments() {
   return (
@@ -24,7 +28,7 @@ function Payments() {
           </div>
           <h3 style={{ marginBottom: "20px" }}>Transactions | This Month</h3>
           <div>
-            <PaginationTable data={data} itemsPerPage={5} />
+            <PaginationTable data={data} itemsPerPage={19} />
           </div>
         </div>
       </div>

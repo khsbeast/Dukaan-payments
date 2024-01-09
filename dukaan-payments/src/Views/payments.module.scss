@@ -2,28 +2,30 @@
   display: flex;
   height: 100%;
   background: #fafafa;
-}
 
-.sideBar {
-  flex-basis: 15%;
-  background-color: #1e2640;
-  height: 100%;
-}
+  .sideBar {
+    flex-basis: 15%;
+    background-color: #1e2640;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
 
-.main {
-  flex: 1;
-  .bodyContainer {
-    margin: 2rem;
-    .overviewSection {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 24px;
-    }
-    h3 {
-      color: var(--Black-12, #1a181e);
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 28px;
+  .main {
+    flex: 1;
+    .bodyContainer {
+      margin: 2rem;
+      .overviewSection {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+      }
+      h3 {
+        color: var(--Black-12, #1a181e);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+      }
     }
   }
 }

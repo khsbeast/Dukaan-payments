@@ -30,10 +30,21 @@ const PaginationTable = ({ data, itemsPerPage }) => {
       <div className={styles.header}>
         <div className={styles.headerItem}>Order ID</div>
         <div className={styles.headerItem}>Order date</div>
-        <div className={styles.headerItem} style={{justifyContent:"end"}}>Order Amount</div>
-        <div className={styles.headerItem} style={{justifyContent:"end"}}>Transaction fees</div>
+        <div className={styles.headerItem} style={{ justifyContent: "end" }}>
+          Order Amount
+        </div>
+        <div className={styles.headerItem} style={{ justifyContent: "end" }}>
+          Transaction fees
+        </div>
       </div>
-      <TableItem id="#281209" date="7 July, 2023" amount="₹1,278.23" fees="₹22" />
+      {paymentsData.map((item) => (
+        <TableItem
+          id={item.orderId}
+          date={item.orderDate}
+          amount={item.orderAmount}
+          fees={item.transactionFee}
+        />
+      ))}
       <div className={styles.pagination}>
         <NavButtons
           action={handlePrevClick}
