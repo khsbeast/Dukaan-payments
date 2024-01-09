@@ -40,7 +40,11 @@ const Buttons = ({ activePage, totalPages, setActivePage }) => {
 
   if (endButton < totalPages) {
     if (endButton < totalPages - 1) {
-      buttons.push(<span key="truncate-end" style={{textAlign:"end"}}>...</span>);
+      buttons.push(
+        <span key="truncate-end" style={{ textAlign: "end" }}>
+          ...
+        </span>
+      );
     }
     buttons.push(
       <button key={totalPages} onClick={() => setActivePage(totalPages)}>

@@ -1,3 +1,6 @@
+@import "../../../Utils/vars";
+
+
 .box {
   display: flex;
   gap: 12px;
@@ -16,13 +19,13 @@
       }
     }
     .name {
-      color: var(--Black-100, #fff);
+      color: $white;
       font-size: 15px;
       width: 108px;
       font-weight: 500;
       line-height: 22px;
       a {
-        color: var(--Black-100, #fff);
+        color: $white;
         font-size: 13px;
         font-weight: 400;
         line-height: 16px;

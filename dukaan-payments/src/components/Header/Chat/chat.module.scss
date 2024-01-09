@@ -1,3 +1,5 @@
+@import "../../../Utils/vars";
+
 .chatWrapper {
   display: flex;
   gap: 12px;
@@ -5,7 +7,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #e6e6e6;
+    background: $gray-4;
     cursor: pointer;
   }
 }

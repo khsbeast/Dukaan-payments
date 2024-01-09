@@ -1,10 +1,13 @@
+@import "../../../Utils/vars";
+
+
 .CreditsBox {
   display: flex;
   gap: 12px;
   padding: 6px 12px;
   border-radius: 4px;
-  background: #353c53;
-  color: #fff;
+  background: $gray-7;
+  color: $white;
   img {
     padding: 6px;
     border-radius: 4px;

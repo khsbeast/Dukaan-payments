@@ -1,18 +1,19 @@
+@import "../../../Utils/vars";
+
 .inputBox {
   display: flex;
   align-items: center;
   padding: 9px 16px;
-  background: #f2f2f2;
+  background: $gray-3;
   gap: 8px;
   input {
     width: 400px;
     border-radius: 6px;
-    background: #f2f2f2;
+    background: $gray-3;
     outline: none;
-    color: #808080;
+    color: $gray-5;
     line-height: 22px;
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
   }
 }

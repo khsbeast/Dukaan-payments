@@ -6,9 +6,7 @@ import CreditsBox from "./CreditsBox/CreditsBox.jsx";
 
 function SideBar() {
   return (
-    <div
-     className={styles.sideBarWrapper}
-    >
+    <div className={styles.sideBarWrapper}>
       <div className={styles.sideBar}>
         <div>
           <UserBox />
