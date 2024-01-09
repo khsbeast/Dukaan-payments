@@ -3,6 +3,10 @@ import styles from "./paginationTable.module.scss";
 import PaginationButtons from "./PaginationButtons/Buttons";
 import NavButtons from "./PaginationButtons/NavButtons/NavButtons";
 import TableItem from "./PaginationButtons/TableItem/TableItem";
+import searchIcon from "../../Assets/search.svg";
+import sortIcon from "../../Assets/Sort.svg";
+import downloadIcon from "../../Assets/download.svg";
+import infoIcon from "../../Assets/Info.svg";
 
 const PaginationTable = ({ data, itemsPerPage }) => {
   const [activePage, setActivePage] = useState(1);
@@ -27,6 +31,27 @@ const PaginationTable = ({ data, itemsPerPage }) => {
 
   return (
     <div className={styles.tableCard}>
+      <div className={styles.utilityWrapper}>
+        <div className={styles.inputBox}>
+          <img src={searchIcon} alt="search" />
+          <input
+            type="text"
+            placeholder="Search by order ID..."
+            className={styles.search}
+          />
+        </div>
+        <div style={{ display: "flex", gap: "12px" }}>
+          <div className={styles.sort}>
+            <button>
+              Sort
+              <img src={sortIcon} alt="sort" />
+            </button>
+          </div>
+          <button>
+            <img src={downloadIcon} alt="download" style={{ padding: "8px" }} />
+          </button>
+        </div>
+      </div>
       <div className={styles.header}>
         <div className={styles.headerItem}>Order ID</div>
         <div className={styles.headerItem}>Order date</div>

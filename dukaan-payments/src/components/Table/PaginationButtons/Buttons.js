@@ -1,3 +1,5 @@
+import styles from "../paginationTable.module.scss";
+
 const Buttons = ({ activePage, totalPages, setActivePage }) => {
   const buttonRange = 9;
   let startButton = activePage;
@@ -29,7 +31,7 @@ const Buttons = ({ activePage, totalPages, setActivePage }) => {
       <button
         key={i}
         onClick={() => setActivePage(i)}
-        className={activePage === i ? "active" : ""}
+        className={activePage === i ? styles.active : ""}
       >
         {i}
       </button>

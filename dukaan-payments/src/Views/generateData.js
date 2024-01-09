@@ -4,7 +4,7 @@ export const getPayments = () => {
     const fakeArray = [];
     
   
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 360; i++) {
       const orderId = `#${faker.number.int({ min: 100000, max: 999999 })}`;
       const orderDate = faker.date.between('2023-07-01', '2023-07-31').toLocaleDateString('en-US', {
         year: 'numeric',
